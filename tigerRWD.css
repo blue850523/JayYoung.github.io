@@ -100,7 +100,7 @@ form>input:invalid+.ok{  /*如果驗證失敗*/
 }
 .messagetype{
     display: flex;
-    padding: 0 100px;
+    padding: 0 80px;
 }
 .messagetype img{
    flex:1;
