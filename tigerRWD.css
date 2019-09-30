@@ -11,10 +11,49 @@ img{
     vertical-align: bottom;
     height: auto;
 }
+.banner{
+    width: 100%;
+    height: 600px;
+    background: linear-gradient(165deg,#f69d3c  10%,wheat 30%, transparent 35%) center center /100% 100%,
+                url("images/bannerM.jpg") right center / auto 100%;
+}
+.container{
+    width: 100%;
+    max-width: 1200px;
+    height: 30%;
+    margin: auto;
+}
+.banner-text{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 10px;
+}
+.banner-text h1{
+    font-size: 20px;
+    border-bottom: 2px solid white;
+    padding-bottom: 10px;
+    font-weight: 900;
+}
+.banner-text h1 small{
+    display: block;
+    font-size: 20px;
+    padding-top: 10px;
+}
+.banner-text h2{
+    font-size: 16px;
+    padding-top: 10px;
+    font-weight: 700;
+}
 .item-group{
     width: 100%;
     max-width: 1280px;
     margin: auto;
+}
+.item-group .pic{
+    position: relative;
 }
 .item{
     margin: 20px 30px;
@@ -23,12 +62,14 @@ img{
     font-size: 28px;
     text-align: center;
     padding: 20px 0;
+    transition: color .5s;
 }
 .item .text p{
     font-size: 16px;
     text-align: left;
     padding: 10px;
     line-height: 1.5;
+    transition: color .5s;
 }
 .title{
     padding: 30px 10px;
@@ -79,6 +120,10 @@ form>input{
     border: 1px solid gray;
     border-radius: 5px;
 }
+input[type="radio"]:checked+span{
+    color: orange;
+    font-weight: 900;
+}
 #btn{
     font-family: "微軟正黑體";
     font-size: 16px;
@@ -108,12 +153,50 @@ form>input:invalid+.ok{  /*如果驗證失敗*/
 .messagetype a{
     margin: 10px;
 }
+.watermark{
+    display: none;
+}
 @media screen and (min-width:768px){
     .item-group{
         display: flex;
     }
     .item{
         width: 1000px; /*解決因字數而改變圖片大小的問題*/
+    }
+    .banner{
+        width: 100%;
+        height: 500px;
+        background: linear-gradient(110deg,#f69d3c  10%,wheat 40%, transparent 60%) center center /100% 100%,
+                    url("images/banner.jpg") right center / auto 100%;
+    }
+    .container{
+        width: 100%;
+        max-width: 1200px;
+        height: 100%;
+        margin: auto;
+    }
+    .banner-text{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    .banner-text h1{
+        font-size: 50px;
+        border-bottom: 2px solid white;
+        padding-bottom: 20px;
+        font-weight: 900;
+    }
+    .banner-text h1 small{
+        display: block;
+        font-size: 42px;
+        padding-top: 20px;
+    }
+    .banner-text h2{
+        font-size: 30px;
+        padding-top: 20px;
+        font-weight: 700;
     }
     .feeder .item{
         display: flex;
@@ -126,5 +209,42 @@ form>input:invalid+.ok{  /*如果驗證失敗*/
     .feeder .item .pic{
         box-sizing: border-box;
         margin: 0 50px 0 0;
+    }
+    .about .watermark{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        background: rgba(0, 0, 0, .6);
+        border-radius: 50%;
+        color: orange;
+        font-weight: 900;
+        font-size: 50px;
+        opacity: 0;
+        transition: opacity .5s;
+    }
+    .item .pic:hover .watermark{
+        opacity: 1;
+    }
+    .watermark h4::after{
+        content: "";
+        display: block;
+        width: 0%;
+        height: 5px;
+        margin: auto;
+        background-color: orange;
+        transition: width 1s 0s ;
+    }
+    .item .pic:hover .watermark h4::after{
+        width: 70%;
+    }
+    .about .item .text:hover h3,
+    .about .item .text:hover p{
+        color: orange;
     }
 }
