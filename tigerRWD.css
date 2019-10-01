@@ -4,7 +4,7 @@
     list-style: none;
 }
 body{
-    font-family: "微軟正黑體";
+    font-family: "Comic Sans MS","微軟正黑體";
 }
 img{
     width: 100%;
@@ -30,6 +30,7 @@ img{
     justify-content: center;
     align-items: flex-start;
     padding-left: 10px;
+    color: saddlebrown;
 }
 .banner-text h1{
     font-size: 20px;
